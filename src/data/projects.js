@@ -1,0 +1,40 @@
+export const projects = [
+  {
+    id: 1,
+    slug: "portfolio-app",
+    title: "Portfolio App",
+    description:
+      "Applicazione web moderna per showcase progetti personali con dashboard admin integrata.",
+    thumbnail: "/images/projects/portfolio.jpg",
+    tags: ["React", "Node.js", "MongoDB"],
+    featured: true,
+    year: 2024,
+    link: "https://github.com/mister-nothing00",
+    demo: "#",
+  },
+  {
+    id: 2,
+    slug: "ecommerce-platform",
+    title: "E-Commerce Platform",
+    description:
+      "Piattaforma e-commerce completa con gestione prodotti, carrello e pagamenti.",
+    thumbnail: "/images/projects/ecommerce.jpg",
+    tags: ["Next.js", "Stripe", "Tailwind"],
+    featured: true,
+    year: 2024,
+    link: "https://github.com/mister-nothing00",
+    demo: "#",
+  },
+  {
+    id: 3,
+    slug: "mobile-fitness-app",
+    title: "Mobile Fitness App",
+    description: "App mobile cross-platform per tracking workout e nutrizione.",
+    thumbnail: "/images/projects/fitness-app.jpg",
+    tags: ["React Native", "Expo", "Firebase"],
+    featured: true,
+    year: 2024,
+    link: "https://github.com/mister-nothing00",
+    demo: "#",
+  },
+];
