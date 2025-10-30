@@ -15,7 +15,7 @@ const inter = Inter({
 // METADATA SEO
 // ============================================
 export const metadata = {
-  metadataBase: new URL("https://francescodivita.dev"),
+  metadataBase: new URL("https://portfolio-personale-alpha.vercel.app/"),
 
   title: {
     default: "Francesco di Vita | Full-Stack Developer & Mobile Specialist",
@@ -46,7 +46,7 @@ export const metadata = {
   authors: [
     {
       name: "Francesco Davide di Vita",
-      url: "https://francescodivita.dev",
+      url: "https://portfolio-personale-alpha.vercel.app/",
     },
   ],
 
@@ -68,7 +68,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "it_IT",
-    url: "https://francescodivita.dev",
+    url: "https://portfolio-personale-alpha.vercel.app/",
     title: "Francesco di Vita | Full-Stack Developer",
     description:
       "Full-Stack Developer specializzato in React, Next.js e React Native. Creo esperienze digitali moderne e performanti.",
@@ -92,7 +92,7 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://francescodivita.dev",
+    canonical: "https://portfolio-personale-alpha.vercel.app/",
   },
 
   verification: {
@@ -141,7 +141,7 @@ export default function RootLayout({ children }) {
               "@type": "Person",
               name: "Francesco Davide di Vita",
               url: "https://francescodivita.dev",
-              image: "https://francescodivita.dev/profile.jpg",
+              image: "https://portfolio-personale-alpha.vercel.app/images/profile.jpg",
               email: "francescodavidedivita@gmail.com",
               birthDate: "2000-06-18",
               gender: "Male",
@@ -233,7 +233,7 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Francesco di Vita Portfolio",
-              url: "https://francescodivita.dev",
+              url: "https://portfolio-personale-alpha.vercel.app/",
               description:
                 "Portfolio professionale di Francesco di Vita, Full-Stack Developer",
               author: {

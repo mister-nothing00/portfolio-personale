@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import { homeFAQ } from '@/data/faq'
 
 // ============================================
 // METADATA SPECIFICI PER HOME PAGE
@@ -9,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: 'Francesco di Vita | Full-Stack Developer',
     description: 'Full-Stack Developer specializzato in React, Next.js e React Native.',
-    url: 'https://francescodivita.dev',
+    url: 'https://portfolio-personale-alpha.vercel.app/',
     type: 'website',
   },
 }
@@ -32,8 +33,8 @@ export default function Home() {
               name: 'Francesco Davide di Vita',
               alternateName: 'Francesco di Vita',
               description: 'Full-Stack Developer specializzato in React, Next.js e React Native',
-              url: 'https://francescodivita.dev',
-              image: 'https://francescodivita.dev/profile.jpg',
+              url: 'https://portfolio-personale-alpha.vercel.app/',
+              image: 'https://portfolio-personale-alpha.vercel.app/images/profile.png',
               sameAs: [
                 'https://github.com/mister-nothing00',
                 'https://www.linkedin.com/in/francesco-di-vita-113355183/',
@@ -47,7 +48,7 @@ export default function Home() {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://francescodivita.dev',
+                  item: 'https://portfolio-personale-alpha.vercel.app/',
                 },
               ],
             },
@@ -55,8 +56,29 @@ export default function Home() {
         }}
       />
 
+        {/* FAQ Schema.org JSON-LD */}
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: homeFAQ.map(faq => ({
+                    '@type': 'Question',
+                    name: faq.question,
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: faq.answer,
+                    },
+                  })),
+                }),
+              }}
+            />
+
       {/* Hero Section - Full Page */}
       <Hero />
+
+    
     </>
   )
 }
