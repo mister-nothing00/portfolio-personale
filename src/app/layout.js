@@ -96,7 +96,7 @@ export const metadata = {
   },
 
   verification: {
-    google: "your-google-verification-code",
+    google: process.env.NEXT_GOOGLE_VERIFICATION,
   },
 
   category: "technology",
@@ -141,7 +141,8 @@ export default function RootLayout({ children }) {
               "@type": "Person",
               name: "Francesco Davide di Vita",
               url: "https://francescodivita.dev",
-              image: "https://portfolio-personale-alpha.vercel.app/images/profile.jpg",
+              image:
+                "https://portfolio-personale-alpha.vercel.app/images/profile.jpg",
               email: "francescodavidedivita@gmail.com",
               birthDate: "2000-06-18",
               gender: "Male",
