@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'Ambizioni & Obiettivi - Francesco di Vita',
     description: 'Obiettivi professionali e visione futura di Francesco di Vita',
-    url: 'https://francescodivita.dev/ambitions',
+    url: 'https://portfolio-personale-alpha.vercel.app/ambitions',
     type: 'website',
   },
 }
@@ -123,7 +123,7 @@ export default function AmbitionsPage() {
             '@type': 'ProfilePage',
             name: 'Ambizioni & Obiettivi - Francesco di Vita',
             description: 'Obiettivi professionali e visione futura di Francesco di Vita',
-            url: 'https://francescodivita.dev/ambitions',
+            url: 'https://portfolio-personale-alpha.vercel.app/ambitions',
             author: {
               '@type': 'Person',
               name: 'Francesco Davide di Vita',
@@ -135,13 +135,13 @@ export default function AmbitionsPage() {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://francescodivita.dev',
+                  item: 'https://portfolio-personale-alpha.vercel.app',
                 },
                 {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Ambitions',
-                  item: 'https://francescodivita.dev/ambitions',
+                  item: 'https://portfolio-personale-alpha.vercel.app/ambitions',
                 },
               ],
             },

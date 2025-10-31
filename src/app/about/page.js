@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "About Francesco di Vita",
     description: "Sviluppatore Full-Stack specializzato in tecnologie moderne",
-    url: "https://francescodivita.dev/about",
+    url: "https://portfolio-personale-alpha.vercel.app/about",
     type: "profile",
   },
 };
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 "Full-Stack Developer con esperienza in React, Next.js e React Native",
               birthDate: "2000-06-18",
               jobTitle: "Full-Stack Developer",
-              url: "https://francescodivita.dev",
+              url: "https://portfolio-personale-alpha.vercel.app",
             },
             breadcrumb: {
               "@type": "BreadcrumbList",
@@ -55,13 +55,13 @@ export default function AboutPage() {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://francescodivita.dev",
+                  item: "https://portfolio-personale-alpha.vercel.app",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "About",
-                  item: "https://francescodivita.dev/about",
+                  item: "https://portfolio-personale-alpha.vercel.app/about",
                 },
               ],
             },
@@ -186,9 +186,9 @@ export default function AboutPage() {
                   crescita personale
                 </strong>
                 : leggo libri come "Pensa e Arricchisci Te Stesso", "Come
-                Trattare gli Altri e Farseli Amici", "Padre Ricco Padre
-                Povero" e "Le 48 Leggi del Potere". Sono convinto che il
-                successo inizi dalla mente.
+                Trattare gli Altri e Farseli Amici", "Padre Ricco Padre Povero"
+                e "Le 48 Leggi del Potere". Sono convinto che il successo inizi
+                dalla mente.
               </p>
             </div>
 

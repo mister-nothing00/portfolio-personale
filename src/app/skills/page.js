@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'Skills & Competenze - Francesco di Vita',
     description: 'Stack tecnologico e competenze di Francesco di Vita - Full-Stack Developer',
-    url: 'https://francescodivita.dev/skills',
+    url: 'https://portfolio-personale-alpha.vercel.app/skills',
     type: 'website',
   },
 }
@@ -31,7 +31,7 @@ export default function SkillsPage() {
             '@type': 'ItemPage',
             name: 'Competenze Tecniche - Francesco di Vita',
             description: 'Stack tecnologico e competenze di Francesco di Vita',
-            url: 'https://francescodivita.dev/skills',
+            url: 'https://portfolio-personale-alpha.vercel.app/skills',
             author: {
               '@type': 'Person',
               name: 'Francesco Davide di Vita',
@@ -44,13 +44,13 @@ export default function SkillsPage() {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://francescodivita.dev',
+                  item: 'https://portfolio-personale-alpha.vercel.app',
                 },
                 {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Skills',
-                  item: 'https://francescodivita.dev/skills',
+                  item: 'https://portfolio-personale-alpha.vercel.app/skills',
                 },
               ],
             },

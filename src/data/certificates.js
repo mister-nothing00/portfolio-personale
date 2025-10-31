@@ -5,7 +5,7 @@ export const certificates = [
     issuer: "start2impact University",
     date: "2024-12-01",
     image: "/certificati/master-fullstack.webp",
-    credential: "https://www.start2impact.it",
+  
     description: "7 progetti individuali completati",
   },
   {
@@ -14,7 +14,6 @@ export const certificates = [
     issuer: "start2impact University",
     date: "2024-11-04",
     image: "/certificati/master-frontend.webp",
-    credential: "https://www.start2impact.it",
     description: "5 progetti individuali completati",
   },
   {
