@@ -87,7 +87,7 @@ export default function AboutPage() {
                 {/* Image container */}
                 <div className="relative aspect-square rounded-2xl overflow-hidden border border-[var(--border-light)] shadow-xl">
                   <Image
-                    src="/images/profile.jpg"
+                    src="/images/profile.png"
                     alt="Francesco di Vita"
                     fill
                     className="object-cover"
@@ -272,7 +272,6 @@ export default function AboutPage() {
                     "CSS3",
                     "Tailwind CSS",
                     "Bootstrap",
-        
                     "JavaScript",
                     "jQuery",
                     "React",
@@ -292,7 +291,6 @@ export default function AboutPage() {
                     "Postman",
                     "Figma",
                     "Canva",
-                 
                   ].map((tech) => (
                     <span
                       key={tech}
