@@ -419,7 +419,7 @@ export default function AmbitionsPage() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#10b981] text-white font-semibold hover:bg-[#059669] hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl  text-white font-semibold  hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 Contattami
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

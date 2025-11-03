@@ -3,99 +3,44 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
+import {  Layers } from "lucide-react";
+import Image from "next/image";
 
 export default function BottomNav() {
   const pathname = usePathname();
-  const [showProjectsMenu, setShowProjectsMenu] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const [showMenu, setShowMenu] = useState(false);
 
   const navItems = [
     {
       id: "home",
       label: "Home",
       href: "/",
-      icon: (active) => (
-        <svg
-          className="w-6 h-6"
-          fill={active ? "currentColor" : "none"}
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={active ? 0 : 2}
-            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-          />
-        </svg>
-      ),
     },
     {
       id: "about",
       label: "About",
       href: "/about",
-      icon: (active) => (
-        <svg
-          className="w-6 h-6"
-          fill={active ? "currentColor" : "none"}
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={active ? 0 : 1}
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
-      ),
     },
+   
     {
       id: "projects",
       label: "Projects",
       href: "/projects",
-      hasSubmenu: true,
       submenu: [
         { label: "All Projects", href: "/projects" },
         { label: "Skills", href: "/skills" },
         { label: "Certificates", href: "/certificates" },
       ],
-      icon: (active) => (
-        <svg
-          className="w-6 h-6"
-          fill={active ? "currentColor" : "none"}
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={active ? 0 : 2}
-            d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-          />
-        </svg>
-      ),
     },
     {
       id: "ambitions",
       label: "Ambitions",
       href: "/ambitions",
-      icon: (active) => (
-        <svg
-          className="w-6 h-6"
-          fill={active ? "currentColor" : "none"}
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={active ? 0 : 2}
-            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-          />
-        </svg>
-      ),
+    },
+     {
+      id: "contact",
+      label: "Contact",
+      href: "/contact",
     },
   ];
 
@@ -106,100 +51,162 @@ export default function BottomNav() {
 
   return (
     <>
-      {/* Projects Submenu Overlay */}
-      {showProjectsMenu && (
+      {/* Menu Overlay */}
+      {showMenu && (
         <div
           className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[250]"
-          onClick={() => setShowProjectsMenu(false)}
+          onClick={() => setShowMenu(false)}
         />
       )}
 
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 z-[300] bg-[var(--bg-primary)]/80 backdrop-blur-lg border-t border-[var(--border-light)] shadow-2xl">
         <div className="container max-w-2xl mx-auto">
-          <div className="flex items-center justify-between py-2">
-            {navItems.map((item) => {
-              const active = isActive(item.href);
+          <div className="flex items-center justify-between px-4 py-2">
+            {/* Logo - Left */}
+            <Link
+              href="/"
+              className="flex items-center group relative"
+            >
+              <div className="relative">
+                <Image
+                  src="/logo/icon-white.webp"
+                  alt="Francesco Logo"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-lg relative z-10 transition-transform duration-300 group-hover:scale-110"
+                />
+                </div>
+            </Link>
 
-              return (
-                <div key={item.id} className="relative">
-                  {/* Nav Item */}
-                  {item.hasSubmenu ? (
-                    <button
-                      onClick={() => setShowProjectsMenu(!showProjectsMenu)}
-                      className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all duration-300 ${
-                        active
-                          ? "text-[var(--accent-primary)] scale-110"
-                          : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:scale-105"
-                      }`}
-                    >
-                      {item.icon(active)}
-                      <span className="text-xs font-medium">{item.label}</span>
+            {/* Menu Button - Right */}
+            <button
+              onClick={() => setShowMenu(!showMenu)}
+              className="relative group"
+              aria-label="Menu"
+            >
+              <div
+                className={`flex items-center justify-center p-3 rounded-xl transition-all duration-300 relative z-10 ${
+                  showMenu
+                    ? "text-[var(--accent-primary)] bg-[var(--accent-primary)]/10 scale-110"
+                    : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] hover:scale-105"
+                }`}
+              >
+                <Layers className="w-6 h-6" />
+              </div>
+              {/* Border effect */}
+              <div
+                className={`absolute inset-0 rounded-xl border-2 transition-all duration-300 ${
+                  showMenu
+                    ? "border-[var(--accent-primary)] scale-105"
+                    : "border-[var(--accent-primary)]/30 group-hover:border-[var(--accent-primary)]/60"
+                }`}
+              />
+              {/* Glow when active */}
+              {showMenu && (
+                <div className="absolute inset-0 bg-[var(--accent-primary)]/20 rounded-xl blur-lg animate-pulse-slow" />
+              )}
+            </button>
 
-                      {/* Dropdown indicator */}
-                      <svg
-                        className={`w-3 h-3 absolute -top-1 right-2 transition-transform duration-300 ${
-                          showProjectsMenu ? "rotate-180" : ""
-                        }`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </button>
-                  ) : (
+            {/* Main Menu */}
+            {showMenu && (
+              <div className="absolute bottom-full right-4 mb-3 w-64 bg-[var(--bg-primary)]/95 backdrop-blur-xl border-2 border-[var(--accent-primary)]/30 rounded-xl shadow-2xl overflow-hidden">
+                {navItems.map((item, index) => (
+                  <div key={item.id}>
+                    {/* Main Nav Item */}
                     <Link
                       href={item.href}
-                      className={`flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all duration-300 ${
-                        active
-                          ? "text-[var(--accent-primary)] scale-110"
-                          : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:scale-105"
+                      onClick={() => setShowMenu(false)}
+                      className={`block px-5 py-3 text-base font-semibold transition-all duration-300 animate-slide-in-right relative group ${
+                        isActive(item.href)
+                          ? "bg-[var(--accent-primary)]/10 text-[var(--accent-primary)]"
+                          : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]"
                       }`}
+                      style={{
+                        animationDelay: `${index * 50}ms`,
+                      }}
                     >
-                      {item.icon(active)}
-                      <span className="text-xs font-medium">{item.label}</span>
+                      {item.label}
+                      {/* Active indicator line */}
+                      {isActive(item.href) && (
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--accent-primary)] to-[var(--accent-secondary)] rounded-r-full" />
+                      )}
                     </Link>
-                  )}
 
-                  {/* Active Indicator */}
-                  {active && (
-                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[var(--accent-primary)] animate-pulse" />
-                  )}
-
-                  {/* Submenu */}
-                  {item.hasSubmenu && showProjectsMenu && (
-                    <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-48 bg-[var(--bg-primary)] border border-[var(--border-light)] rounded-xl shadow-2xl overflow-hidden animate-fade-in-up">
-                      {item.submenu.map((subItem) => (
-                        <Link
-                          key={subItem.href}
-                          href={subItem.href}
-                          onClick={() => setShowProjectsMenu(false)}
-                          className={`block px-4 py-3 text-sm font-medium transition-colors ${
-                            pathname === subItem.href
-                              ? "bg-[var(--accent-primary)]/10 text-[var(--accent-primary)]"
-                              : "text-[var(--text-secondary)] hover:bg-[var(--bg-secondary)] hover:text-[var(--text-primary)]"
-                          }`}
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                    {/* Submenu Items */}
+                    {item.submenu && (
+                      <div className="bg-[var(--bg-secondary)]/30 border-l-2 border-[var(--accent-primary)]/20 ml-4">
+                        {item.submenu.map((subItem, subIndex) => (
+                          <Link
+                            key={subItem.href}
+                            href={subItem.href}
+                            onClick={() => setShowMenu(false)}
+                            className={`block pl-8 pr-5 py-2.5 text-sm font-medium transition-all duration-300 animate-slide-in-right relative ${
+                              pathname === subItem.href
+                                ? "text-[var(--accent-primary)] bg-[var(--accent-primary)]/5"
+                                : "text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-secondary)]/50"
+                            }`}
+                            style={{
+                              animationDelay: `${
+                                (index + subIndex + 1) * 50
+                              }ms`,
+                            }}
+                          >
+                            <span className="flex items-center gap-2">
+                              <span className="text-[var(--accent-primary)] text-xs font-bold">
+                                →
+                              </span>
+                              {subItem.label}
+                            </span>
+                            {/* Mini indicator for active subitem */}
+                            {pathname === subItem.href && (
+                              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1/2 bg-[var(--accent-primary)] rounded-r-full" />
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </nav>
 
       {/* Spacer per evitare che il contenuto vada sotto la bottom nav */}
       <div className="h-20" />
+
+      <style jsx global>{`
+        @keyframes slide-in-right {
+          from {
+            opacity: 0;
+            transform: translateX(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes pulse-slow {
+          0%, 100% {
+            opacity: 0.6;
+          }
+          50% {
+            opacity: 1;
+          }
+        }
+
+        .animate-slide-in-right {
+          animation: slide-in-right 0.3s ease-out forwards;
+          opacity: 0;
+        }
+
+        .animate-pulse-slow {
+          animation: pulse-slow 3s ease-in-out infinite;
+        }
+      `}</style>
     </>
   );
 }

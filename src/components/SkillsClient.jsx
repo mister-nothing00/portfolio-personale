@@ -143,11 +143,11 @@ export default function SkillsClient() {
             {softSkills.map((skill, index) => (
               <div
                 key={skill.id}
-                className="card text-center hover:shadow-2xl animate-fade-in-up"
+                className="card text-start hover:shadow-2xl animate-fade-in-up"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="text-4xl mb-4">{skill.icon}</div>
-                <h3 className="text-xl font-semibold font-heading mb-2">
+                <h3 className="text-lg font-semibold font-heading mb-2">
                   {skill.title}
                 </h3>
                 <p className="text-sm text-[var(--text-secondary)]">
@@ -296,7 +296,7 @@ export default function SkillsClient() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#10b981] text-white font-semibold hover:bg-[#059669] hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-white font-semibold hover:bg-[#059669] hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
             >
               Contattami
               <svg

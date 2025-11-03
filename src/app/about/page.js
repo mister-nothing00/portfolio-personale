@@ -268,16 +268,31 @@ export default function AboutPage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
+                    "HTML5",
+                    "CSS3",
+                    "Tailwind CSS",
+                    "Bootstrap",
+        
+                    "JavaScript",
+                    "jQuery",
                     "React",
+                    "RTK Query",
+                    "Redux",
+                    "Vite",
                     "Next.js",
+                    "Vue.js",
                     "React Native",
                     "Node.js",
                     "Express",
                     "MongoDB",
                     "MySQL",
                     "WordPress",
-                    "Tailwind CSS",
-                    "Git",
+                    "Git & GitHub",
+                    "ThunderClient",
+                    "Postman",
+                    "Figma",
+                    "Canva",
+                 
                   ].map((tech) => (
                     <span
                       key={tech}
@@ -292,8 +307,14 @@ export default function AboutPage() {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4">
                 <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-medium)] hover:border-[var(--accent-primary)] hover:bg-[var(--bg-tertiary)] font-semibold transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Contattami
+                </Link>
+                <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] text-white font-semibold hover:bg-[#059669] hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl  text-white font-semibold hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
                 >
                   Vedi i miei progetti
                   <svg
@@ -309,13 +330,6 @@ export default function AboutPage() {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
-                </Link>
-
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--bg-secondary)] border border-[var(--border-medium)] hover:border-[var(--accent-primary)] hover:bg-[var(--bg-tertiary)] font-semibold transition-all duration-300 hover:scale-105 active:scale-95"
-                >
-                  Contattami
                 </Link>
               </div>
             </div>

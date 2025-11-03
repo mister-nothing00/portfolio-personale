@@ -3,7 +3,7 @@ export const homeFAQ = [
     id: 1,
     question: "Quali tecnologie utilizzi principalmente?",
     answer:
-      "Mi specializzo in React, Next.js e React Native per il frontend, Node.js ed Express per il backend, e MongoDB/MySQL per i database. Utilizzo anche WordPress per progetti CMS.",
+      "Mi specializzo in React, Next.js e Vue.js per il frontend, Node.js ed Express per il backend, e MongoDB/MySQL per i database. Utilizzo anche WordPress per progetti CMS.",
   },
   {
     id: 2,

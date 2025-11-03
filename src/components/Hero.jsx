@@ -83,7 +83,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/projects"
-                className="inline-flex items-center justify-center px-8 py-2 rounded-xl bg-[#10b981] hover:text-white font-semibold font-heading hover:bg-[#059669] hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
+                className="inline-flex items-center justify-start px-8 py-2 rounded-xl   font-semibold font-heading hover:bg-[#059669] hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300"
               >
                 Vedi i miei progetti
                 <svg
@@ -202,7 +202,7 @@ export default function Hero() {
         </span>
 
         <a
-          href="https://www.instagram.com/francesco.divi"
+          href="https://www.instagram.com/__ciccio18"
           target="_blank"
           rel="noopener noreferrer"
           className="w-9 h-9 flex items-center justify-center rounded-lg text-(--text-muted) hover:text-(--accent-primary) hover:bg-(--bg-secondary) transition-all duration-300 hover:scale-110 active:scale-95"
@@ -214,7 +214,7 @@ export default function Hero() {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/francesco-di-vita-113355183/"
+          href="https://www.linkedin.com/in/francesco-di-vita/"
           target="_blank"
           rel="noopener noreferrer"
           className="w-9 h-9 flex items-center justify-center rounded-lg text-(--text-muted) hover:text-(--accent-primary) hover:bg-(--bg-secondary) transition-all duration-300 hover:scale-110 active:scale-95"
@@ -237,27 +237,7 @@ export default function Hero() {
           </svg>
         </a>
 
-        <a
-          href="/contact"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-9 h-9 flex items-center justify-center rounded-lg text-(--text-muted) hover:text-(--accent-primary) hover:bg-(--bg-secondary) transition-all duration-300 hover:scale-110 active:scale-95"
-          aria-label="email"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-        </a>
+        
 
         {/* Linea decorativa */}
         <div className="w-px h-8 bg-(--border-light)/50 mt-1"></div>

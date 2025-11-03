@@ -128,123 +128,8 @@ export default function RootLayout({ children }) {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-
-        {/* Schema.org JSON-LD - Person */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Francesco Davide di Vita",
-              url: "https://francescodivita.dev",
-              image:
-                "https://portfolio-personale-alpha.vercel.app/images/profile.jpg",
-              email: "francescodavidedivita@gmail.com",
-              birthDate: "2000-06-18",
-              gender: "Male",
-              nationality: "Italian",
-
-              sameAs: [
-                "https://github.com/mister-nothing00",
-                "https://www.linkedin.com/in/francesco-di-vita-113355183/",
-                "https://www.instagram.com/francesco.divi",
-              ],
-
-              jobTitle: "Full-Stack Developer",
-
-              worksFor: [
-                {
-                  "@type": "Organization",
-                  name: "Space2Earth",
-                  url: "https://space2earth.com",
-                },
-                {
-                  "@type": "Organization",
-                  name: "GeospatialX",
-                },
-              ],
-
-              alumniOf: {
-                "@type": "EducationalOrganization",
-                name: "start2impact University",
-                url: "https://www.start2impact.it",
-              },
-
-              knowsAbout: [
-                "React",
-                "Next.js",
-                "React Native",
-                "Node.js",
-                "Express.js",
-                "JavaScript",
-                "WordPress",
-                "Full-Stack Development",
-                "Frontend Development",
-                "Backend Development",
-                "Mobile Development",
-                "Web Development",
-                "HTML",
-                "CSS",
-                "SCSS",
-                "Tailwind CSS",
-                "MongoDB",
-                "MySQL",
-                "GraphQL",
-                "Git",
-                "GitHub",
-                "Vercel",
-                "SEO",
-              ],
-
-              hasCredential: [
-                {
-                  "@type": "EducationalOccupationalCredential",
-                  name: "Master in Full-Stack Development",
-                  credentialCategory: "certificate",
-                  recognizedBy: {
-                    "@type": "Organization",
-                    name: "start2impact University",
-                  },
-                  dateCreated: "2024-11-04",
-                },
-                {
-                  "@type": "EducationalOccupationalCredential",
-                  name: "Master in Front-End Development",
-                  credentialCategory: "certificate",
-                  recognizedBy: {
-                    "@type": "Organization",
-                    name: "start2impact University",
-                  },
-                  dateCreated: "2024-04-11",
-                },
-              ],
-            }),
-          }}
-        />
-
-        {/* Schema.org JSON-LD - Website */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Francesco di Vita Portfolio",
-              url: "https://portfolio-personale-alpha.vercel.app/",
-              description:
-                "Portfolio professionale di Francesco di Vita, Full-Stack Developer",
-              author: {
-                "@type": "Person",
-                name: "Francesco Davide di Vita",
-              },
-              inLanguage: "it-IT",
-            }),
-          }}
-        />
       </head>
 
       <body className={inter.variable} suppressHydrationWarning>
@@ -260,7 +145,7 @@ export default function RootLayout({ children }) {
           </a>
 
           {/* Main Content */}
-          <main id="main-content" className="min-h-screen ">
+          <main id="main-content" className=" min-h-screen ">
             {children}
           </main>
 
