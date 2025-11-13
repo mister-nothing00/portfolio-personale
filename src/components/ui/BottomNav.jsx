@@ -99,7 +99,7 @@ export default function BottomNav() {
                 className={`absolute inset-0 rounded-xl border-2 transition-all duration-300 ${
                   showMenu
                     ? "border-[var(--accent-primary)] scale-105"
-                    : "border-[var(--accent-primary)]/30 group-hover:border-[var(--accent-primary)]/60"
+                    : "border-[var(--accent-primary)]/90 group-hover:border-[var(--accent-primary)]/60"
                 }`}
               />
               {/* Glow when active */}

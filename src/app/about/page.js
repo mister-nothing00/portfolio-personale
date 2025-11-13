@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import Script from "next/script";
 
 // ============================================
 // METADATA SPECIFICI PER ABOUT PAGE
@@ -32,7 +33,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Schema.org JSON-LD per About */}
-      <script
+      <Script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -44,7 +45,7 @@ export default function AboutPage() {
               alternateName: "Francesco di Vita",
               description:
                 "Full-Stack Developer con esperienza in React, Next.js e React Native",
-              birthDate: "2000-06-18",
+              birthDate: "2001-06-18",
               jobTitle: "Full-Stack Developer",
               url: "https://portfolio-personale-alpha.vercel.app",
             },
@@ -138,7 +139,7 @@ export default function AboutPage() {
                   <strong className="text-[var(--text-primary)]">
                     24 anni
                   </strong>
-                  , nato il 18 giugno 2000. Sviluppatore{" "}
+                  , nato il 18 giugno 2001. Sviluppatore{" "}
                   <strong className="text-[var(--text-primary)]">
                     Full-Stack
                   </strong>{" "}
@@ -219,7 +220,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[var(--text-primary)]">
-                        2+ Anni
+                        1+ Anni
                       </p>
                       <p className="text-sm text-[var(--text-muted)]">
                         Esperienza Professionale
