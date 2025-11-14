@@ -12,7 +12,7 @@ export const metadata = {
     title: "Francesco di Vita | Full-Stack Developer",
     description:
       "Full-Stack Developer specializzato in React, Next.js e React Native.",
-    url: "https://portfolio-personale-alpha.vercel.app/",
+    url: "https://portfolio-francesco-davide-divita.vercel.app",
     type: "website",
   },
 };
@@ -33,7 +33,7 @@ export default function Home() {
             name: "Francesco Davide di Vita",
             url: "https://francescodivita.dev",
             image:
-              "https://portfolio-personale-alpha.vercel.app/images/profile.jpg",
+              "https://portfolio-francesco-davide-divita.vercel.app/images/profile.jpg",
             email: "francescodavidedivita@gmail.com",
             birthDate: "2001-06-18",
             gender: "Male",
@@ -125,7 +125,7 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             name: "Francesco di Vita Portfolio",
-            url: "https://portfolio-personale-alpha.vercel.app/",
+            url: "https://portfolio-francesco-davide-divita.vercel.app",
             description:
               "Portfolio professionale di Francesco di Vita, Full-Stack Developer",
             author: {
@@ -149,9 +149,9 @@ export default function Home() {
               alternateName: "Francesco di Vita",
               description:
                 "Full-Stack Developer specializzato in React, Next.js e React Native",
-              url: "https://portfolio-personale-alpha.vercel.app/",
+              url: "https://portfolio-francesco-davide-divita.vercel.app",
               image:
-                "https://portfolio-personale-alpha.vercel.app/images/profile.png",
+                "https://portfolio-francesco-davide-divita.vercel.app/images/profile.png",
               sameAs: [
                 "https://github.com/mister-nothing00",
                 "https://www.linkedin.com/in/francesco-di-vita-113355183/",
@@ -165,7 +165,7 @@ export default function Home() {
                   "@type": "ListItem",
                   position: 1,
                   name: "Home",
-                  item: "https://portfolio-personale-alpha.vercel.app/",
+                  item: "https://portfolio-francesco-davide-divita.vercel.app",
                 },
               ],
             },

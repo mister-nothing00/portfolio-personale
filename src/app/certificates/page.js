@@ -15,7 +15,7 @@ export const metadata = {
     title: "Certificazioni - Francesco di Vita",
     description:
       "Certificazioni professionali di Francesco di Vita - Full-Stack Developer",
-    url: "https://portfolio-personale-alpha.vercel.app/certificates",
+    url: "https://portfolio-francesco-davide-divita.vercel.app/certificates",
     type: "website",
   },
 };
@@ -51,7 +51,7 @@ export default function CertificatesPage() {
             "@type": "ItemPage",
             name: "Certificazioni - Francesco di Vita",
             description: "Certificazioni professionali di Francesco di Vita",
-            url: "https://portfolio-personale-alpha.vercel.app/certificates",
+            url: "https://portfolio-francesco-davide-divita.vercel.app/certificates",
             author: {
               "@type": "Person",
               name: "Francesco Davide di Vita",
@@ -79,7 +79,7 @@ export default function CertificatesPage() {
                   "@type": "ListItem",
                   position: 2,
                   name: "Certificates",
-                  item: "https://portfolio-personale-alpha.vercel.app/certificates",
+                  item: "https://portfolio-francesco-davide-divita.vercel.app/certificates",
                 },
               ],
             },

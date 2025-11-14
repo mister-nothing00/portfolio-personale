@@ -13,7 +13,7 @@ export const metadata = {
   openGraph: {
     title: "About Francesco di Vita",
     description: "Sviluppatore Full-Stack specializzato in tecnologie moderne",
-    url: "https://portfolio-personale-alpha.vercel.app/about",
+    url: "https://portfolio-francesco-davide-divita.vercel.app/about",
     type: "profile",
   },
 };
@@ -62,7 +62,7 @@ export default function AboutPage() {
                   "@type": "ListItem",
                   position: 2,
                   name: "About",
-                  item: "https://portfolio-personale-alpha.vercel.app/about",
+                  item: "https://portfolio-francesco-davide-divita.vercel.app/about",
                 },
               ],
             },

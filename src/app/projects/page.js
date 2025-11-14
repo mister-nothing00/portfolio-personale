@@ -11,7 +11,7 @@ export const metadata = {
   openGraph: {
     title: 'Projects - Francesco di Vita',
     description: 'Portfolio progetti di Francesco di Vita - Full-Stack Developer',
-    url: 'https://portfolio-personale-alpha.vercel.app/projects',
+    url: 'https://portfolio-francesco-davide-divita.vercel.app/projects',
     type: 'website',
   },
 }
@@ -31,7 +31,7 @@ export default function ProjectsPage() {
             '@type': 'CollectionPage',
             name: 'Portfolio Progetti - Francesco di Vita',
             description: 'Raccolta dei progetti sviluppati da Francesco di Vita',
-            url: 'https://portfolio-personale-alpha.vercel.app/projects',
+            url: 'https://portfolio-francesco-davide-divita.vercel.app/projects',
             author: {
               '@type': 'Person',
               name: 'Francesco Davide di Vita',
@@ -50,13 +50,13 @@ export default function ProjectsPage() {
                   '@type': 'ListItem',
                   position: 1,
                   name: 'Home',
-                  item: 'https://portfolio-personale-alpha.vercel.app',
+                  item: 'https://portfolio-francesco-davide-divita.vercel.app',
                 },
                 {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Projects',
-                  item: 'https://portfolio-personale-alpha.vercel.app/projects',
+                  item: 'https://portfolio-francesco-davide-divita.vercel.app/projects',
                 },
               ],
             },

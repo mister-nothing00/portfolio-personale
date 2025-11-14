@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: 'Contatti - Francesco di Vita',
     description: 'Contatta Francesco di Vita per collaborazioni e progetti',
-    url: 'https://portfolio-personale-alpha.vercel.app/contact',
+    url: 'https://portfolio-francesco-davide-divita.vercel.app/contact',
     type: 'website',
   },
 }
@@ -30,7 +30,7 @@ export default function ContactPage() {
             '@type': 'ContactPage',
             name: 'Contatti - Francesco di Vita',
             description: 'Pagina contatti di Francesco di Vita',
-            url: 'https://portfolio-personale-alpha.vercel.app/contact',
+            url: 'https://portfolio-francesco-davide-divita.vercel.app/contact',
             author: {
               '@type': 'Person',
               name: 'Francesco Davide di Vita',
@@ -49,7 +49,7 @@ export default function ContactPage() {
                   '@type': 'ListItem',
                   position: 2,
                   name: 'Contact',
-                  item: 'https://portfolio-personale-alpha.vercel.app/contact',
+                  item: 'https://portfolio-francesco-davide-divita.vercel.app/contact',
                 },
               ],
             },

@@ -15,7 +15,7 @@ const inter = Inter({
 // METADATA SEO
 // ============================================
 export const metadata = {
-  metadataBase: new URL("https://portfolio-personale-alpha.vercel.app/"),
+  metadataBase: new URL("https://portfolio-francesco-davide-divita.vercel.app"),
 
   title: {
     default: "Francesco di Vita | Full-Stack Developer & Mobile Specialist",
@@ -46,7 +46,7 @@ export const metadata = {
   authors: [
     {
       name: "Francesco Davide di Vita",
-      url: "https://portfolio-personale-alpha.vercel.app/",
+      url: "https://portfolio-francesco-davide-divita.vercel.app",
     },
   ],
 
@@ -68,7 +68,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "it_IT",
-    url: "https://portfolio-personale-alpha.vercel.app/",
+    url: "https://portfolio-francesco-davide-divita.vercel.app",
     title: "Francesco di Vita | Full-Stack Developer",
     description:
       "Full-Stack Developer specializzato in React, Next.js e React Native. Creo esperienze digitali moderne e performanti.",
@@ -92,7 +92,7 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://portfolio-personale-alpha.vercel.app/",
+    canonical: "https://portfolio-francesco-davide-divita.vercel.app",
   },
 
   verification: {
