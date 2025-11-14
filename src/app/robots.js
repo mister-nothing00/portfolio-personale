@@ -17,6 +17,6 @@ export default function robots() {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://portfolio-personale-alpha.vercel.app/sitemap.xml',
+    sitemap: 'https://https://portfolio-francesco-davide-divita.vercel.app/sitemap.xml',
   }
 }

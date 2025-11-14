@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://portfolio-personale-alpha.vercel.app'
+  const baseUrl = 'https://portfolio-francesco-davide-divita.vercel.app/'
   const currentDate = new Date().toISOString()
 
   // Lista di tutte le pagine del sito
