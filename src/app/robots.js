@@ -1,3 +1,4 @@
+// app/robots.js
 export default function robots() {
   return {
     rules: [
@@ -11,12 +12,7 @@ export default function robots() {
         allow: '/',
         disallow: ['/api/', '/admin/'],
       },
-      {
-        userAgent: 'Bingbot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
     ],
-    sitemap: 'https://https://portfolio-francesco-davide-divita.vercel.app/sitemap.xml',
+    sitemap: 'https://portfolio-francesco-davide-divita.vercel.app/sitemap.xml',
   }
 }

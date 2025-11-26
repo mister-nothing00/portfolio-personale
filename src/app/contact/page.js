@@ -1,12 +1,18 @@
 // app/contact/page.js
 import ContactForm from '@/components/ContactForm'
+import { ContactPageSchema, BreadcrumbSchema } from '@/components/schema/SEOSchemas'
 
-// ============================================
-// METADATA SSR
-// ============================================
 export const metadata = {
-  title: 'Contatti',
-  description: 'Contatta Francesco di Vita per collaborazioni, progetti freelance o opportunità lavorative. Full-Stack Developer disponibile per nuove sfide.',
+  title: 'Contatti | Francesco di Vita',
+  description: 'Contatta Francesco di Vita per collaborazioni professionali, progetti freelance, opportunità lavorative full-stack o consulenze tecniche su React, Next.js e React Native.',
+  keywords: [
+    "Contatti Francesco di Vita",
+    "Freelance Full-Stack developer",
+    "Collaborazioni web developer",
+    "Consulenza React Next.js",
+    "Opportunità lavoro developer Sicilia",
+    "Email developer geospaziale"
+  ],
   openGraph: {
     title: 'Contatti - Francesco di Vita',
     description: 'Contatta Francesco di Vita per collaborazioni e progetti',
@@ -15,49 +21,16 @@ export const metadata = {
   },
 }
 
-// ============================================
-// CONTACT PAGE - SSR
-// ============================================
+const breadcrumbItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Contact', href: '/contact' },
+]
+
 export default function ContactPage() {
   return (
     <>
-      {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ContactPage',
-            name: 'Contatti - Francesco di Vita',
-            description: 'Pagina contatti di Francesco di Vita',
-            url: 'https://portfolio-francesco-davide-divita.vercel.app/contact',
-            author: {
-              '@type': 'Person',
-              name: 'Francesco Davide di Vita',
-              email: 'francescodavidedivita@gmail.com',
-            },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: 'https://portfolio-personale-alpha.vercel.app',
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: 'Contact',
-                  item: 'https://portfolio-francesco-davide-divita.vercel.app/contact',
-                },
-              ],
-            },
-          }),
-        }}
-      />
-
-      {/* Client Component con form */}
+      <ContactPageSchema />
+      <BreadcrumbSchema items={breadcrumbItems} />
       <ContactForm />
     </>
   )

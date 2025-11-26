@@ -1,70 +1,36 @@
-// app/projects/page.js
 import ProjectsClient from '@/components/ProjectsClient'
 import { projects } from '@/data/projects'
+import { CollectionPageSchema, BreadcrumbSchema } from '@/components/schema/SEOSchemas'
 
-// ============================================
-// METADATA SSR
-// ============================================
 export const metadata = {
-  title: 'Projects',
-  description: 'Portfolio completo dei progetti sviluppati da Francesco di Vita. Web app, mobile app e soluzioni innovative con React, Next.js, React Native e Node.js.',
+  title: "Projects | Portfolio Francesco di Vita",
+  description: "Portfolio completo: web app con React/Next.js, mobile app con React Native, soluzioni geospaziali. 20+ progetti completati per startup e clienti.",
+  keywords: [
+    "Portfolio Francesco di Vita",
+    "Progetti React Next.js",
+    "Web app geospaziali",
+    "Mobile app React Native",
+    "Portfolio developer Sicilia",
+    "Progetti space2earth"
+  ],
   openGraph: {
-    title: 'Projects - Francesco di Vita',
-    description: 'Portfolio progetti di Francesco di Vita - Full-Stack Developer',
-    url: 'https://portfolio-francesco-davide-divita.vercel.app/projects',
-    type: 'website',
+    title: "Projects - Francesco di Vita",
+    description: "Portfolio progetti Full-Stack Developer",
+    url: "https://portfolio-francesco-davide-divita.vercel.app/projects",
+    type: "website",
   },
 }
 
-// ============================================
-// PROJECTS PAGE - SSR
-// ============================================
 export default function ProjectsPage() {
   return (
     <>
-      {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: 'Portfolio Progetti - Francesco di Vita',
-            description: 'Raccolta dei progetti sviluppati da Francesco di Vita',
-            url: 'https://portfolio-francesco-davide-divita.vercel.app/projects',
-            author: {
-              '@type': 'Person',
-              name: 'Francesco Davide di Vita',
-            },
-            hasPart: projects.map(project => ({
-              '@type': 'CreativeWork',
-              name: project.title,
-              description: project.description,
-              url: project.demo,
-              image: project.thumbnail,
-            })),
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: 'https://portfolio-francesco-davide-divita.vercel.app',
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: 'Projects',
-                  item: 'https://portfolio-francesco-davide-divita.vercel.app/projects',
-                },
-              ],
-            },
-          }),
-        }}
+      <CollectionPageSchema projects={projects} />
+      <BreadcrumbSchema 
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Projects", href: "/projects" }
+        ]} 
       />
-
-      {/* Client Component con filtri interattivi */}
       <ProjectsClient />
     </>
   )

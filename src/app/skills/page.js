@@ -1,64 +1,40 @@
 // app/skills/page.js
 import SkillsClient from '@/components/SkillsClient'
 import { skills } from '@/data/skills'
+import { ItemPageSchema, BreadcrumbSchema } from '@/components/schema/SEOSchemas'
 
-// ============================================
-// METADATA SSR
-// ============================================
 export const metadata = {
-  title: 'Skills & Competenze',
-  description: 'Stack tecnologico completo di Francesco di Vita: React, Next.js, React Native, Node.js, WordPress e molto altro. Competenze tecniche e soft skills per progetti full-stack.',
+  title: "Skills & Competenze | Francesco di Vita",
+  description: "Stack tecnologico: MERN (MongoDB, Express, React, Node.js), Next.js, Vue.js, React Native, WordPress, Leaflet. 40+ tecnologie per sviluppo full-stack e geospaziale.",
+  keywords: [
+    "Competenze React developer",
+    "Skills Next.js developer",
+    "MERN stack developer",
+    "React Native mobile developer",
+    "Tecnologie geospaziali Leaflet",
+    "Full-Stack skills Sicilia",
+    "Vue.js developer Italia"
+  ],
   openGraph: {
-    title: 'Skills & Competenze - Francesco di Vita',
-    description: 'Stack tecnologico e competenze di Francesco di Vita - Full-Stack Developer',
-    url: 'https://portfolio-francesco-davide-divita.vercel.app/skills',
-    type: 'website',
+    title: "Skills & Competenze - Francesco di Vita",
+    description: "Stack tecnologico completo Full-Stack Developer",
+    url: "https://portfolio-francesco-davide-divita.vercel.app/skills",
+    type: "website",
   },
 }
 
-// ============================================
-// SKILLS PAGE - SSR
-// ============================================
 export default function SkillsPage() {
+  const allSkills = skills.flatMap(cat => cat.technologies.map(tech => tech.name))
+  
   return (
     <>
-      {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ItemPage',
-            name: 'Competenze Tecniche - Francesco di Vita',
-            description: 'Stack tecnologico e competenze di Francesco di Vita',
-            url: 'https://portfolio-francesco-davide-divita.vercel.app/skills',
-            author: {
-              '@type': 'Person',
-              name: 'Francesco Davide di Vita',
-              knowsAbout: skills.flatMap(cat => cat.technologies.map(tech => tech.name)),
-            },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: 'https://portfolio-personale-alpha.vercel.app',
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: 'Skills',
-                  item: 'https://portfolio-francesco-davide-divita.vercel.app/skills',
-                },
-              ],
-            },
-          }),
-        }}
+      <ItemPageSchema type="skills" items={allSkills} />
+      <BreadcrumbSchema 
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Skills", href: "/skills" }
+        ]} 
       />
-
-      {/* Client Component con tabs interattive */}
       <SkillsClient />
     </>
   )

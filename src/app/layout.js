@@ -38,7 +38,7 @@ export const metadata = {
     "Mobile Development",
     "JavaScript",
     "Node.js",
-    "Space2Earth",
+    "space2earth",
     "GeospatialX",
     "start2impact",
   ],
@@ -128,8 +128,8 @@ export default function RootLayout({ children }) {
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        
       </head>
 
       <body className={inter.variable} suppressHydrationWarning>

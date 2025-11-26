@@ -60,7 +60,7 @@ export default function BottomNav() {
       )}
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-[300] bg-[var(--bg-primary)]/80 backdrop-blur-lg border-t border-[var(--border-light)] shadow-2xl">
+      <nav className="fixed bottom-0 left-0 right-0 z-300 bg-(--bg-primary)/80 backdrop-blur-lg border-t border-(--border-light) shadow-2xl">
         <div className="container max-w-2xl mx-auto">
           <div className="flex items-center justify-between px-4 py-2">
             {/* Logo - Left */}
@@ -70,11 +70,11 @@ export default function BottomNav() {
             >
               <div className="relative">
                 <Image
-                  src="/logo/icon-white.webp"
+                  src="/logo/icon0.svg"
                   alt="Francesco Logo"
                   width={40}
                   height={40}
-                  className="w-10 h-10 rounded-lg relative z-10 transition-transform duration-300 group-hover:scale-110"
+                  className="w-10 h-10 bg-white  rounded-full relative z-10 transition-transform duration-300 group-hover:scale-110"
                 />
                 </div>
             </Link>

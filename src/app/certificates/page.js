@@ -1,97 +1,57 @@
 // app/certificates/page.js
 import Image from "next/image";
 import Link from "next/link";
-import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import { certificates } from "@/data/certificates";
+import { ItemPageSchema, BreadcrumbSchema } from "@/components/schema/SEOSchemas";
 
-// ============================================
-// METADATA SSR
-// ============================================
 export const metadata = {
-  title: "Certificazioni",
+  title: "Certificazioni | Francesco di Vita",
   description:
-    "Certificazioni ufficiali di Francesco di Vita: Master Full-Stack Development e Front-End Development da start2impact University. Competenze certificate e validate.",
+    "Certificazioni ufficiali start2impact University: Master Full-Stack Development (7 progetti) e Front-End Development (5 progetti). Competenze certificate e validate.",
+  keywords: [
+    "Certificazioni start2impact",
+    "Master Full-Stack certificato",
+    "Certificato Front-End developer",
+    "start2impact University alumni",
+    "Certificazioni web developer Italia",
+  ],
   openGraph: {
     title: "Certificazioni - Francesco di Vita",
-    description:
-      "Certificazioni professionali di Francesco di Vita - Full-Stack Developer",
+    description: "Certificazioni professionali Full-Stack Developer",
     url: "https://portfolio-francesco-davide-divita.vercel.app/certificates",
     type: "website",
   },
 };
 
-// ============================================
-// BREADCRUMB DATA
-// ============================================
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "Certificates", href: "/certificates" },
 ];
 
-// ============================================
-// CERTIFICATES PAGE - SSR
-// ============================================
 export default function CertificatesPage() {
-  // Stats
+
   const totalCertificates = certificates.length;
-  const latestYear = new Date(certificates[0].date).getFullYear();
-  const totalProjects = certificates.reduce((acc, cert) => {
-    const match = cert.description.match(/(\d+)\s+progetti/);
-    return acc + (match ? parseInt(match[1]) : 0);
-  }, 0);
+const latestYear = new Date(certificates[0].date).getFullYear();
+const totalProjects = 12; // 7 + 5 dai tuoi master
+
+  // Prepare JSON-LD credentials data
+  const credentials = certificates.map((cert) => ({
+    "@type": "EducationalOccupationalCredential",
+    name: cert.title,
+    credentialCategory: "certificate",
+    recognizedBy: {
+      "@type": "Organization",
+      name: cert.issuer,
+    },
+    dateCreated: cert.date,
+  }));
 
   return (
     <>
-      {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemPage",
-            name: "Certificazioni - Francesco di Vita",
-            description: "Certificazioni professionali di Francesco di Vita",
-            url: "https://portfolio-francesco-davide-divita.vercel.app/certificates",
-            author: {
-              "@type": "Person",
-              name: "Francesco Davide di Vita",
-              hasCredential: certificates.map((cert) => ({
-                "@type": "EducationalOccupationalCredential",
-                name: cert.title,
-                credentialCategory: "certificate",
-                recognizedBy: {
-                  "@type": "Organization",
-                  name: cert.issuer,
-                },
-                dateCreated: cert.date,
-              })),
-            },
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://portfolio-personale-alpha.vercel.app",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "Certificates",
-                  item: "https://portfolio-francesco-davide-divita.vercel.app/certificates",
-                },
-              ],
-            },
-          }),
-        }}
-      />
-
+      <ItemPageSchema type="certificates" items={credentials} />
+      <BreadcrumbSchema items={breadcrumbItems} />
       <section className="section min-h-screen">
         <div className="container">
-          {/* Breadcrumbs */}
-          <Breadcrumbs items={breadcrumbItems} />
-
           {/* ============================================ */}
           {/* HEADER + STATS */}
           {/* ============================================ */}

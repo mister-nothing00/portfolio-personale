@@ -1,13 +1,19 @@
 // app/ambitions/page.js
 import Link from 'next/link'
-import Breadcrumbs from '@/components/ui/Breadcrumbs'
+import { goals, futureSkills } from '@/data/ambitions' 
+import { ProfilePageSchema, BreadcrumbSchema } from '@/components/schema/SEOSchemas'
 
-// ============================================
-// METADATA SSR
-// ============================================
 export const metadata = {
-  title: 'Ambizioni & Obiettivi',
-  description: 'Gli obiettivi professionali e la visione futura di Francesco di Vita. Crescita continua, nuove tecnologie e progetti innovativi nel mondo dello sviluppo software.',
+  title: 'Ambizioni & Obiettivi | Francesco di Vita',
+  description: 'Obiettivi professionali di crescita: da sviluppatore Full-Stack a Tech Lead, acquisizione competenze cloud AWS/GCP, progetti open source e visione imprenditoriale nel settore tecnologico.',
+  keywords: [
+    "Obiettivi developer Italia",
+    "Crescita professionale programmatore",
+    "Tech Lead aspirante",
+    "Cloud computing AWS developer",
+    "Open source contributor",
+    "Carriera Full-Stack developer"
+  ],
   openGraph: {
     title: 'Ambizioni & Obiettivi - Francesco di Vita',
     description: 'Obiettivi professionali e visione futura di Francesco di Vita',
@@ -16,143 +22,21 @@ export const metadata = {
   },
 }
 
-// ============================================
-// BREADCRUMB DATA
-// ============================================
 const breadcrumbItems = [
   { label: 'Home', href: '/' },
   { label: 'Ambitions', href: '/ambitions' },
 ]
 
-// ============================================
-// AMBITIONS DATA
-// ============================================
-const goals = {
-  shortTerm: [
-    {
-      id: 1,
-      title: 'Padroneggiare TypeScript',
-      description: 'Migliorare la type safety e la qualità del codice in progetti enterprise',
-      icon: '⚡',
-      timeline: '3-6 mesi',
-    },
-    {
-      id: 2,
-      title: 'Contributi Open Source',
-      description: 'Iniziare a contribuire attivamente a progetti open source di rilievo',
-      icon: '🌟',
-      timeline: '3-6 mesi',
-    },
-    {
-      id: 3,
-      title: 'Certificazione Cloud',
-      description: 'Ottenere certificazione AWS o Google Cloud per deployment scalabili',
-      icon: '☁️',
-      timeline: '6 mesi',
-    },
-  ],
-  mediumTerm: [
-    {
-      id: 1,
-      title: 'Tech Lead Role',
-      description: 'Guidare un team di sviluppatori in progetti complessi',
-      icon: '👥',
-      timeline: '1-2 anni',
-    },
-    {
-      id: 2,
-      title: 'Architetture Avanzate',
-      description: 'Specializzarmi in microservizi, serverless e system design scalabile',
-      icon: '🏗️',
-      timeline: '1-2 anni',
-    },
-    {
-      id: 3,
-      title: 'Speaking & Mentorship',
-      description: 'Iniziare a parlare a conferenze tech e fare mentorship per junior developer',
-      icon: '🎤',
-      timeline: '1-2 anni',
-    },
-  ],
-  longTerm: [
-    {
-      id: 1,
-      title: 'Startup Tecnologica',
-      description: 'Lanciare una mia startup o prodotto SaaS innovativo',
-      icon: '🚀',
-      timeline: '3-5 anni',
-    },
-    {
-      id: 2,
-      title: 'Thought Leader',
-      description: 'Diventare un punto di riferimento nella community tech italiana',
-      icon: '🎯',
-      timeline: '3-5 anni',
-    },
-    {
-      id: 3,
-      title: 'Indipendenza Finanziaria',
-      description: 'Raggiungere libertà finanziaria attraverso progetti e investimenti smart',
-      icon: '💰',
-      timeline: '5+ anni',
-    },
-  ],
-}
-
-const futureSkills = [
-  { name: 'TypeScript Avanzato', level: 'Priority High', icon: '🔷' },
-  { name: 'System Design', level: 'Priority High', icon: '🏛️' },
-  { name: 'AWS / Cloud', level: 'Priority High', icon: '☁️' },
-  { name: 'Docker & Kubernetes', level: 'Priority Medium', icon: '🐳' },
-  { name: 'GraphQL Avanzato', level: 'Priority Medium', icon: '📊' },
-  { name: 'Web3 / Blockchain', level: 'Priority Low', icon: '⛓️' },
-]
-
-// ============================================
-// AMBITIONS PAGE - SSR
-// ============================================
 export default function AmbitionsPage() {
   return (
     <>
-      {/* Schema.org JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'ProfilePage',
-            name: 'Ambizioni & Obiettivi - Francesco di Vita',
-            description: 'Obiettivi professionali e visione futura di Francesco di Vita',
-            url: 'https://portfolio-francesco-davide-divita.vercel.app/ambitions',
-            author: {
-              '@type': 'Person',
-              name: 'Francesco Davide di Vita',
-            },
-            breadcrumb: {
-              '@type': 'BreadcrumbList',
-              itemListElement: [
-                {
-                  '@type': 'ListItem',
-                  position: 1,
-                  name: 'Home',
-                  item: 'https://portfolio-personale-alpha.vercel.app',
-                },
-                {
-                  '@type': 'ListItem',
-                  position: 2,
-                  name: 'Ambitions',
-                  item: 'https://portfolio-francesco-davide-divita.vercel.app/ambitions',
-                },
-              ],
-            },
-          }),
-        }}
-      />
-
+      <ProfilePageSchema pageName="Ambitions" />
+      <BreadcrumbSchema items={breadcrumbItems} />
+      
+      
       <section className="section min-h-screen">
         <div className="container">
-          {/* Breadcrumbs */}
-          <Breadcrumbs items={breadcrumbItems} />
+         
 
           {/* ============================================ */}
           {/* HEADER */}

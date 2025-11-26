@@ -1,79 +1,43 @@
+// app/about/page.js
 import Image from "next/image";
 import Link from "next/link";
-import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import Script from "next/script";
+import { ProfilePageSchema, BreadcrumbSchema } from "@/components/schema/SEOSchemas";
 
-// ============================================
-// METADATA SPECIFICI PER ABOUT PAGE
-// ============================================
 export const metadata = {
-  title: "About Me",
-  description:
-    "24 anni, Full-Stack Developer con passione per React, Next.js e React Native. Attualmente in Space2Earth e GeospatialX. Spirito libero, mente pragmatica.",
+  title: "About Me | Francesco di Vita - Full-Stack Developer",
+  description: "24 anni, Full-Stack Developer per space2earth e GeospatialX. Certificato start2impact University. Specializzato in React, Next.js, React Native e tecnologie geospaziali.",
+  keywords: [
+    "Francesco di Vita biografia",
+    "Developer space2earth",
+    "Sviluppatore GeospatialX",
+    "start2impact certificato",
+    "Full-Stack Developer Sicilia",
+    "Programmatore web geospaziale"
+  ],
   openGraph: {
     title: "About Francesco di Vita",
-    description: "Sviluppatore Full-Stack specializzato in tecnologie moderne",
+    description: "Full-Stack Developer specializzato in tecnologie moderne e geospaziali",
     url: "https://portfolio-francesco-davide-divita.vercel.app/about",
     type: "profile",
   },
 };
 
-// ============================================
-// BREADCRUMB DATA
-// ============================================
 const breadcrumbItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
 ];
 
-// ============================================
-// ABOUT PAGE - LAYOUT DIVISO
-// ============================================
 export default function AboutPage() {
   return (
     <>
-      {/* Schema.org JSON-LD per About */}
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfilePage",
-            mainEntity: {
-              "@type": "Person",
-              name: "Francesco Davide di Vita",
-              alternateName: "Francesco di Vita",
-              description:
-                "Full-Stack Developer con esperienza in React, Next.js e React Native",
-              birthDate: "2001-06-18",
-              jobTitle: "Full-Stack Developer",
-              url: "https://portfolio-personale-alpha.vercel.app",
-            },
-            breadcrumb: {
-              "@type": "BreadcrumbList",
-              itemListElement: [
-                {
-                  "@type": "ListItem",
-                  position: 1,
-                  name: "Home",
-                  item: "https://portfolio-personale-alpha.vercel.app",
-                },
-                {
-                  "@type": "ListItem",
-                  position: 2,
-                  name: "About",
-                  item: "https://portfolio-francesco-davide-divita.vercel.app/about",
-                },
-              ],
-            },
-          }),
-        }}
-      />
+      {/* Schema.org */}
+      <ProfilePageSchema pageName="About" />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
 
       <section className="section min-h-screen flex items-center max-w-8xl mx-auto">
         <div className="container">
-          {/* ✅ BREADCRUMBS */}
-          <Breadcrumbs items={breadcrumbItems} />
+         
 
           {/* ============================================ */}
           {/* SEZIONE 1 - IMMAGINE + INTRO */}
