@@ -184,7 +184,7 @@ export default function AboutPage() {
                     </div>
                     <div>
                       <p className="font-semibold text-[var(--text-primary)]">
-                        1+ Anni
+                        1+ Anno
                       </p>
                       <p className="text-sm text-[var(--text-muted)]">
                         Esperienza Professionale
